@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="CallTargetForBranch" ToolsVersion="4.0">
+	<PropertyGroup>
+		<Branch>None</Branch>
+
+    <Configuration Condition=" '$(Branch)' != 'refs/heads/master' ">Debug</Configuration>
+    <Configuration Condition=" '$(Branch)' == 'refs/heads/master' ">Release</Configuration>
+
+    <PublishProfile Condition=" '$(Branch)' == 'refs/heads/master' ">Production</PublishProfile>
+
+    <SolutionDir>../Source</SolutionDir>
+
+    <MSBuildCommunityTasksPath>$(SolutionDir)\.build\MSBuild.Community.Tasks.dll</MSBuildCommunityTasksPath>
+    <NUnitPath>$(SolutionDir)\packages\NUnit.Runners.2.6.2\tools</NUnitPath>
+  </PropertyGroup>
+
+  <UsingTask AssemblyFile="$(MSBuildCommunityTasksPath)" TaskName="MSBuild.Community.Tasks.NUnit" />
+  <UsingTask AssemblyFile="$(teamcity_dotnet_nunitlauncher_msbuild_task)" TaskName="NUnitTeamCity" Condition=" '$(teamcity_dotnet_nunitlauncher_msbuild_task)' != '' " />
+
+  <Target Name="CallTargetForBranch">
+		<Message Text="Starting build for branch $(Branch)" />
+		<Message Text="Using configuration $(Configuration)" />
+    <CallTarget Targets="Build" />
+    <CallTarget Targets="Test" />
+    <CallTarget Targets="Deploy" Condition=" '$(Branch)' == 'refs/heads/master' " />
+	</Target>
+
+  <Target Name="Build">
+    <MSBuild Projects="$(SolutionDir)/PersonalSiteAspNetMvc.sln" Targets="Rebuild" Properties="Configuration=$(Configuration)" />
+  </Target>
+  
+  <ItemGroup>
+    <TestAssemblies Include="$(SolutionDir)\Tests\bin\$(Configuration)\EthanYoung.PersonalWebsite.Tests.dll" />
+  </ItemGroup>
+
+  <Target Name="Test">
+    <NUnit Assemblies="@(TestAssemblies)" ToolPath="$(NUnitPath)" Condition=" '$(teamcity_dotnet_nunitlauncher_msbuild_task)' == '' " />
+    <NUnitTeamCity Assemblies="@(TestAssemblies)" NUnitVersion="NUnit-2.6.2" Condition=" '$(teamcity_dotnet_nunitlauncher_msbuild_task)' != '' " />
+
+    <Exec Command="karma start $(SolutionDir)\Tests\JsTests\teamCity.config.js"/>
+  </Target>
+
+  <Target Name="Deploy">
+    <MSBuild Projects="$(SolutionDir)/Web/Web.csproj" Targets="WebPublish" Properties="Configuration=$(Configuration);PublishProfile=$(PublishProfile)" />
+  </Target>
+</Project>
+
