@@ -1,0 +1,35 @@
+﻿@using EthanYoung.PersonalWebsite.Web.Models
+@{
+    ViewBag.Title = "T-Shirts";
+}
+@section header {
+    @Html.Partial("_Header", new HeaderModel {IsTshirtsActive = true})
+}
+<h1>T-Shirts</h1>
+<div class="media">
+  <a class="pull-left" href="http://www.cafepress.com/ethanolpower/" target="ey-tshirts">
+      <img class="media-object" src="@Url.Content("~/Content/Tshirts/Beer Pump Thumbnail.jpg")" alt="Powered By Ethanol" />
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Powered By Ethanol <a href="http://www.cafepress.com/ethanolpower/" target="ey-tshirts">[Buy Now]</a></h4>
+    <p>
+        Tired of politicians buying votes in farm states by promoting ethanol as fuel? Show
+        your disapproval with this shirt. Tell the politicians to stop causing food inflation
+        and put ethanol back where it belongs: beer.
+    </p>
+  </div>
+</div>
+<div class="media">
+    <a class="pull-left" href="http://www.cafepress.com/powderskier/" target="ey-tshirts">
+        <img class="media-object" src="@Url.Content("~/Content/Tshirts/Skier Pocket Thumbnail.jpg")" alt="This Skier Powered By Ethanol" />
+    </a>
+    <div class="media-body">
+        <h4>This Skier Powered By Ethanol <a href="http://www.cafepress.com/powderskier/" target="ey-tshirts">[Buy Now]</a></h4>
+        <p>
+            On a ski trip one night, a friend was having a few beers and said "I wish I
+            had a t-shirt that said 'This Skier Powered By Ethanol'". We all agreed that
+            the current ethanol powered car craze was worth ridiculing so I decided to
+            follow through on the idea and sell a shirt on Cafe Press.
+        </p>
+    </div>
+</div>

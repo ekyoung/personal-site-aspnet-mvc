@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EthanYoung.PersonalWebsite.Tests.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SampleImagesFolderPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\PersonalProjects\PersonalWebsite\EthanYoung.usSln\Tests\AcceptanceTests\SampleImages</Value>
+    </Setting>
+    <Setting Name="OutputFilesFolderPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\PersonalProjects\PersonalWebsite\EthanYoung.usSln\Tests\AcceptanceTests\OutputFiles</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

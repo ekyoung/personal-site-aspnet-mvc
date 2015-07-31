@@ -1,0 +1,109 @@
+﻿@using EthanYoung.PersonalWebsite.Web.Models
+@{
+    ViewBag.Title = "Resume";
+}
+@section header {
+    @Html.Partial("_Header", new HeaderModel {IsResumeActive = true})
+}
+<img src="@Url.Content("~/Content/Resume/MCSD(rgb).gif")" alt="Microsoft Certified Solution Developer" class="pull-right" />
+<h1>Resume</h1>
+<p class="clearfix">
+    Passively seeking full time employment in a leadership role on a management track as a senior software and web developer using .NET technology.
+</p>
+<h2>Education</h2>
+<ul>
+	<li>
+	    <strong>Bachelor’s Degree</strong> in <strong>Math and Computer Science</strong> and a minor in
+	    <strong>Economics and Business</strong> from the <strong>Colorado School of Mines</strong>, Golden, Colorado
+	</li>
+	<li><strong>Graduated with High Honors</strong>: Cumulative GPA: 3.508</li>
+	<li>Microsoft <strong>MCSD</strong> Certification</li>
+</ul>
+<h2>Programming Skills</h2>
+<ul>
+    <li>Languages: <strong>C#</strong> (6 yrs), <strong>VB.NET</strong> (6 yrs), <strong>ASP.NET</strong> (6 yrs), <strong>SQL</strong> (5 yrs on MS SQL Server), <strong>JavaScript</strong> (6 yrs), <strong>X/HTML</strong> (7 yrs), <strong>Objective C</strong> (6 mos).</li>
+    <li>Experience leading teams on large programming projects involving everything from the initial design, to implementation and testing.</li>
+    <li>Strong understanding of <strong>Object Oriented Programming</strong> with an emphasis on <strong>Domain Driven Design</strong> and patterns.</li>
+    <li>Practice <strong>Test Driven Development</strong> with NUnit, MbUnit, and RhinoMocks.</li>
+    <li>Design automated builds to keep system deployment reliable and reproducible.</li>
+    <li>Familiar with <strong>Service Oriented Architecture</strong> including <strong>ASMX</strong> and <strong>WCF</strong> web services.</li>
+    <li>Familiar with the principles of <strong>N-Tier Development</strong> to keep large systems as flexible and maintainable as possible.</li>        
+    <li>Experience using <strong>Microsoft SQL Server 2000/2005</strong> including database design and writing <strong>stored procedures</strong>.</li>
+    <li>Experience using <strong>DOM Scripting</strong> and <strong>AJAX</strong> to create dynamic web interfaces.</li>
+    <li>Experience using <strong>Subversion, MS Visual Source Safe and Source Gear Vault</strong>, including the use of labels and branches to ease parallel development and deployment.</li>
+    <li>Recently created an <strong>iPhone app</strong>, CapsTracker, and had it accepted into the app store.</li>
+</ul>
+<h2>Values</h2>
+<ul>
+    <li>Personal Responsibility</li>
+    <li>Continuous Learning</li>
+    <li>Follow-through</li>
+    <li>Creativity/Freedom To Try New Things</li>
+</ul>
+<h2>Recent Employment</h2>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">VacationRoost March 2008 - Present</h3>
+  </div>
+  <div class="panel-body">
+      <p>
+          As a senior developer I have been responsible for designing and implementing major portions of mission critical systems. My
+          first contribution was to help migrate to the MS Great Plains accounting system by building an interface between it and our
+          legacy booking database. My next challenge was to assume responsibility for development of a new system of almost 30 websites
+          (now more than 40 sites). I took ownership of the system just before it launched last year and was on the front lines as we
+          worked through the initial issues while continuing to develop new functionality. My latest responsibility is to design and
+          implement a portion of the new system that will replace our legacy inventory database.
+      </p>
+  </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Healthways (formerly DIGOP) July 2005 – September 2007</h3>
+    </div>
+    <div class="panel-body">
+        <p>
+            As a senior developer, I played a leadership role in developing one of the company’s flagship products. I was responsible for
+            meeting with product owners, running an agile project management process, architecture, estimating implementation
+            times, ensuring a consistent quality of implementation, deploying the product to production, and implementing the most
+            complicated features. My team’s portion of the product consisted of a public facing web portal and an administrative
+            site for internal use. Much of the web portal work centered on building a branding system capable of customizing the site to
+            give it a distinct look for different clients. The project required extensive integration with other sites and systems within
+            the company and with third parties. Security of our users’ personal health information was always a top priority and required
+            various encryption technologies, secure web services and protection against SQL Injection and XSS attacks.
+        </p>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">QuantumPM June 2003 – April 2005</h3>
+    </div>
+    <div class="panel-body">
+        <p>
+            My main role was developing data driven websites and other applications to give executives and decision-makers visibility
+            into project status and the overall health of their organization.  Websites were created using ASP.NET in VB.NET or C#.  Data was
+            stored in a MS SQL Server database.  The data access tier used SQL Stored Procedures.  Many of the web applications were
+            added features for MS Project Web Access and were integrated with the Project database.
+        </p>
+    </div>
+</div>
+<h2>Examples of My Work</h2>
+<ul>
+    <li>
+        <a href="http://www.vacationroost.com" target="_blank">http://www.vacationroost.com</a>
+        Made major contributions while employed by VacationRoost.
+    </li>
+    <li>
+        <a href="http://www.wahsatchshooters.com" target="_blank">http://www.wahsatchshooters.com</a>
+        Built and currently maintain the public website and many administrative systems for a local gun club as an independent contractor.
+    </li>
+</ul>
+<h2>My Bookshelf</h2>
+<ul>
+    <li><i>Domain Driven Design</i> by Evans</li>
+    <li><i>Applying Domain Driven Design and Patterns</i> by Nilsson</li>
+    <li><i>Framework Design Guidelines</i> by Cwalina and Abrams</li>
+    <li><i>Writing Secure Code</i> by Howard and LeBlanc</li>
+    <li><i>The Mythical Man Month</i> by Brooks</li>
+    <li><i>The Five Dysfunctions of a Team</i> by Lencioni</li>
+    <li><i>The Carrot Principle</i> by Gostick and Elton</li>
+</ul>

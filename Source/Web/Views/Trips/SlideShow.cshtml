@@ -1,0 +1,30 @@
+﻿@using System.Web.Optimization
+@using EthanYoung.PersonalWebsite.Web.Models
+@model Trip
+@{
+    ViewBag.AngularJsApp = "slideShowApp";
+    ViewBag.Title = @Model.Title;
+}
+@section head {
+    @Styles.Render("~/Content/SlideShow/SlideShow.css")
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.min.js"></script>
+    @Scripts.Render("~/bundles/slideshow")
+}
+@section header {
+    @Html.Partial("_Header", new HeaderModel {IsTripsActive = true})
+}
+<div class="row">
+    <div class="visible-md visible-lg col-md-2">
+        @Html.Partial("_LeftNav", new LeftNavModel {SelectedMenuItemId = "Trips"})
+    </div>
+    <div class="col-sm-12 col-md-10" role="main">
+        <script type="text/javascript">
+            angular.module('slideShowApp')
+                .value('slideShowIndexFileUrl', '@Model.IndexFileUrl')
+                .value('slideShowRootUrl', '@Model.RootUrl');
+        </script>
+        <h1>@Model.Title</h1>
+        <div ng-view></div>
+    </div>
+</div>
